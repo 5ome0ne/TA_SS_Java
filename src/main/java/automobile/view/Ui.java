@@ -35,7 +35,6 @@ public class Ui implements Constants {
         if (choice == null) return;
         switch (choice) {
             case ADD:
-                System.out.println(TXT_ADD);
                 addCar();
                 break;
             case REMOVE:
@@ -58,6 +57,7 @@ public class Ui implements Constants {
         Car car = database.addCar(carType.get(getAddCarNumber()));
         System.out.println(MSG_ADDED);
         System.out.println(car);
+        utils.printSeparator();
     }
 
     private int getAddCarNumber() {
@@ -125,7 +125,7 @@ public class Ui implements Constants {
         utils.printSeparator();
         System.out.println(MSG_SORT);
         int choice = utils.readConsoleInt(TXT_COLON);
-        if (choice == 0) {
+        if (choice == 1) {
             System.out.println(MSG_ASC);
             database.sortAscending();
         } else {

@@ -26,6 +26,9 @@ public interface Constants {
             Bmw.class,
             Mercedes.class);
 
+    String[] BMW_MODELS = {"3", "5", "7"};
+    String[] MERCEDES_MODELS = {"C", "E", "S"};
+
     String TXT_ADD = "Add";
     String TXT_REMOVE = "Remove";
     String TXT_SHOW = "Show";
@@ -43,7 +46,7 @@ public interface Constants {
     String MSG_EMPTY_DB = "No one car in database";
     String MSG_REMOVE = "Choice number of car to delete";
     String MSG_REMOVE_RESULT = "Result of removing: ";
-    String MSG_SORT = "Type 0 for ascending sort and another integer for descending";
+    String MSG_SORT = "Type 1 for ascending sort and another integer for descending";
     String MSG_ADD = "Choice number of car type";
     String MSG_ADDED = "Added:";
     String MSG_ASC = "Ascending sort";

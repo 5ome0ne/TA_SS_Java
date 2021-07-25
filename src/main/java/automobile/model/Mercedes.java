@@ -4,12 +4,11 @@ import java.util.Objects;
 
 public class Mercedes extends Car {
     private String model;
-    private static final String[] models = {"C", "E", "S"};
 
     public Mercedes() {
         super();
         setBrand(TXT_MERCEDES);
-        this.model = generateModel(models);
+        this.model = generateModel(MERCEDES_MODELS);
     }
 
     public void setModel(String model) {
@@ -21,11 +20,13 @@ public class Mercedes extends Car {
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                ", model='" + model + '\'' +
-                ", engine=" + engine +
-                '}';
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public String getBrand() {
+        return null;
     }
 
     @Override
@@ -39,5 +40,13 @@ public class Mercedes extends Car {
     @Override
     public int hashCode() {
         return Objects.hash(getVIN());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", model='" + model + '\'' +
+                ", engine=" + engine +
+                '}';
     }
 }
