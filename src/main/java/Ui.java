@@ -1,11 +1,15 @@
+import utils.Utils;
+
 import java.util.*;
 
 public class Ui implements Constants {
     private final Database database;
     private final Logic logic;
+    private final Utils utils;
 
     public Ui() {
         database = Database.getInstance();
+        utils = Utils.getInstance();
         logic = new Logic();
     }
 
@@ -22,9 +26,9 @@ public class Ui implements Constants {
     }
 
     private void getDataForSums() {
-        int from = askUserInt(MSG_ASK_FROM);
+        int from = utils.readConsoleInt(MSG_ASK_FROM);
         database.add(KEY_FROM, from);
-        int to = askUserInt(MSG_ASK_TO);
+        int to = utils.readConsoleInt(MSG_ASK_TO);
         database.add(KEY_TO, to);
     }
 
@@ -38,22 +42,7 @@ public class Ui implements Constants {
     }
 
     private void getDataForFibonacci() {
-        int from = askUserInt(MSG_ASK_FIB_N);
+        int from = utils.readConsoleInt(MSG_ASK_FIB_N);
         database.add(KEY_FIB_N, from);
-    }
-
-    private int askUserInt(String message) {
-        Scanner scanner = new Scanner(System.in);
-        Integer value = null;
-        while (value == null) {
-            try {
-                System.out.print(message);
-                String string = scanner.nextLine();
-                value = Integer.parseInt(string);
-            } catch (NumberFormatException e) {
-                System.out.println(MSG_Number_Format_Exception);
-            }
-        }
-        return value;
     }
 }

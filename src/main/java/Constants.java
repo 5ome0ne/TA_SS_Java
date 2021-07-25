@@ -9,5 +9,4 @@ public interface Constants {
     String MSG_ASK_FIB_N = "Please enter the size of set : ";
     String MSG_ASK_FROM = "Please enter the 'from' for interval : ";
     String MSG_ASK_TO = "Please enter the   'to' for interval : ";
-    String MSG_Number_Format_Exception = "\n\t\tValue must be integer\n";
 }
